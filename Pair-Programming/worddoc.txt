@@ -1,0 +1,15 @@
+Ian Smith, Prabhat Thapa, Melissa Trick
+
+a.	What do you think is the difference between pair programming and traditional way of programing (developing programs alone)?
+
+The main difference between pair programming and traditional programming is the number of people working on a specific project. Pair programming leads to a better communication working side by side and most often, better documentation for those using the program in the future. Traditional programming may have less explanation due to just one user understanding it, this can make it harder for programmers that may have to use it after the original creator.
+
+b.	Do you think it worked well, or, it did not work? And why?
+
+Pair programming is good for having a second set of eyes to help solve a problem. With pair programming a problem could be solved quickly by another person simply taking a quick look and seeing the issue the driver may not have seen initially. Traditional programming may be better for those that want to learn independently or simply do not like working with others. This is often not the case in most work environments so working with others is good practice.
+
+Roles:
+
+Ian Smith: Driver for problem 1, navigator for problem 2
+Prabhat Thapa: Driver for problem 2, navigator for problem 1
+Melissa Trick: Navigator for problems 1 + 2
