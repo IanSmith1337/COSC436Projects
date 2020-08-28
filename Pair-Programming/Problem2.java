@@ -30,6 +30,15 @@ Explanation: There is no common prefix among the input strings.
 }
 
 
+/* 
+to compile: 
+
+javac <folder>/<filename>
+cd <folder>
+java <filename>
+
+*/
+
 
 
 
