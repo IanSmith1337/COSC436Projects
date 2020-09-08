@@ -2,6 +2,9 @@ package Singleton;
 
 public class PrinterManager {
 
+    private static PrinterManager instance;
+    private Printer[] printers;
+
     // private constructor
     private PrinterManager(int numPrinter) {
         printers = new Printer[numPrinter];
@@ -13,7 +16,7 @@ public class PrinterManager {
 
     //return singleton instance
     public static PrinterManager getInstance(){
-        //no existing
+        // no existing
         //create new
         if (instance == null){
             instance = new PrinterManager(8);
@@ -40,8 +43,7 @@ public class PrinterManager {
 
     public void showStatus()
     {
-        for(int i = 0; i < printers.length; i++
-        {
+        for(int i = 0; i < printers.length; i++) {
             System.out.println("Status of printer " +i+ ":");
             if(printers[i].isBusy) {
                 System.out.println("Busy");
