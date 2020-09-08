@@ -40,7 +40,7 @@ Create a method called assignJob. It is able to assign a job to an available pri
 				return "job is assigned.";
 			}
 		}
-		// no available printers
+		// no available printersn
 		return "all printers are busy, please try again later.";
 	}
 
