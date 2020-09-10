@@ -12,15 +12,7 @@ public class Shallow {
         data = values;
     }
 
-    public void showData() {
+    void showData() {
         System.out.println(Arrays.toString(data));
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {3, 7, 9};
-        Shallow s = new Shallow(nums);
-        s.showData();
-        nums[0] = 13;
-        s.showData();
     }
 }
