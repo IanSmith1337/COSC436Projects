@@ -8,7 +8,7 @@ public class Deep {
     public Deep(int[] values) {
         data = new int [values.length];
         for (int i = 0; i < data.length; i++) {
-            data[i]
+            data[i] = values[i];
         }
     }
 
