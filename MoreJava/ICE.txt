@@ -1,0 +1,23 @@
+Tasks:
+
+1. This task helps you understand how constructors work in inheritance. 
+A.	Create a superclass, called SuperClass.
+B.	Create a constructor for it. Inside the constructor, let it print “this is super class.”
+C.	Create a childclass of SuperClass, called ChildClass.
+D.	Create a constructor for it. Inside the constructor, let it print “this is child class.”
+E.	Create a main function and create a new object for ChildClass.
+F.	Observe what’s printed in console.
+G.	What will happen if you have a default constructor without parameters in addition to the one with parameters?
+--> If the user creates an ovject without specyfying any paramaters the default constructer will be invoked wheras if the user
+specifies some paramaters it'll invoke the constructer with paramets. 
+
+
+2. Liskov Substitution Principle (LSP)
+A.	Please try the LSP example in slides.
+B.	Propose a way to fix the problem in there.
+
+Proposal: Don't make square a subclass. It doesn't follow the same rules that Rectangle does.
+
+
+What to turn in?
+Please upload your code to Blackboard.
