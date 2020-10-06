@@ -1,4 +1,4 @@
-
+package Pair-Programming;
 
 public class Problem2 {
 /*Write a function to find the longest common prefix string amongst an array of strings.
