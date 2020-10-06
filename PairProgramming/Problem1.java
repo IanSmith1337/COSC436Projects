@@ -1,4 +1,4 @@
-package Pair-Programming;
+package PairProgramming;
 
 /* 
 ----------------------------------------------------------------
