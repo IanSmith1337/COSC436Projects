@@ -1,3 +1,4 @@
+package Assignment4;
 package Iterator;
 
 import java.util.*;
@@ -46,7 +47,7 @@ public class StringArray implements Iterable<String> {
         public boolean hasNext() {
             try {
                 item = this.next();
-                while(item.length() < 4 || current > values.length) {
+                while(item.length() < 4 || current < values.length) {
                     item = this.next();
                 }
                 current--;

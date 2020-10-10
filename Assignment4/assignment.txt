@@ -120,7 +120,7 @@ Create a program that will perform each of the following. Note that you may hard
 		4 – Display all desserts
 		5 – Display all hearty healthy items
 		6 – Display all main dishes under a specified price
-7 – Add menu item
+		7 – Add menu item
 		8 – Remove menu item
 	
 WHAT TO TURN IN:  Each of the source files, submitted as one zipped file. Please include sufficient screenshots and introduction to demonstrate how your programs run. 40% deduction if screenshots and introduction are not provided.
