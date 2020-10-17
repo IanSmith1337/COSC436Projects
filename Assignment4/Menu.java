@@ -9,9 +9,9 @@ Menu class:
 
 public class Menu implements Iterable<MenuItem> {
 
-    public final int APPETIZERS = 1;
-    public final int MAIN_DISH = 2;
-    public final int DESSERT = 3;
+    public static final int APPETIZERS = 1;
+    public static final int MAIN_DISH = 2;
+    public static final int DESSERT = 3;
     private ArrayList<MenuItem> menuObject;
 
     public Menu() {
@@ -20,12 +20,6 @@ public class Menu implements Iterable<MenuItem> {
 
     private ArrayList<MenuItem> initMenuItems() {
         menuObject = new ArrayList<>();
-        MenuItem item = new MenuItem("Mac and Cheese", MAIN_DISH, false, 10.99);
-        MenuItem item2 = new MenuItem("Garlic Naan", APPETIZERS, false, 5.99);
-        MenuItem item3 = new MenuItem("Sushi", APPETIZERS, true, 19.99);
-        menuObject.add(item);
-        menuObject.add(item2);
-        menuObject.add(item3);
         return menuObject;
     }
 
@@ -34,25 +28,17 @@ public class Menu implements Iterable<MenuItem> {
         return new AllItemsIterator();
     }
 
-    public Iterator<MenuItem> iterator(int type, int price) {
+    public Iterator<MenuItem> iterator(int type) {
         switch (type) {
             case 2:
                 return new AppetizerIterator();
-                break;
             case 3:
-                return new MainDishIterator(price);
-                break;
+                return new MainDishIterator();
             case 4:
                 return new DessertIterator();
-                break;
             case 5:
                 return new HeartHealthyIterator();
-                break;
-            case 6:
-                return new MainDishIterator(price);
-                break;
             default:
-                iterator();
                 break;
         }
         return new AllItemsIterator();
@@ -64,7 +50,11 @@ public class Menu implements Iterable<MenuItem> {
         public boolean hasNext() {
             try {
                 this.next();
-                current--;
+                if (current > menuObject.size()) {
+                    throw new NoSuchElementException();
+                } else {
+                    current--;
+                }
                 return true;
             } catch (NoSuchElementException e) {
                 return false;
@@ -87,10 +77,14 @@ public class Menu implements Iterable<MenuItem> {
         public boolean hasNext() {
             try {
                 item = this.next();
-                while(item.length() < 4 || current < values.length) {
+                while(item.getCategory() != 1 && current < menuObject.size()) {
                     item = this.next();
                 }
-                current--;
+                if (current >= menuObject.size()) {
+                    throw new NoSuchElementException();
+                } else {
+                    current--;
+                }
                 return true;
             } catch (NoSuchElementException e) {
                 return false;
@@ -109,21 +103,18 @@ public class Menu implements Iterable<MenuItem> {
     public class MainDishIterator implements Iterator<MenuItem> {
         int current = 0;
         MenuItem item;
-        double price;
-
-        public MainDishIterator(double price) {
-            if (price > 0) {  
-                this.price = price;
-            }
-        }
 
         public boolean hasNext() {
             try {
                 item = this.next();
-                while(item.length() < 4 || current < values.length) {
+                while(item.getCategory() != 2 && current < menuObject.size()) {
                     item = this.next();
                 }
-                current--;
+                if (current >= menuObject.size()) {
+                    throw new NoSuchElementException();
+                } else {
+                    current--;
+                }
                 return true;
             } catch (NoSuchElementException e) {
                 return false;
@@ -146,10 +137,14 @@ public class Menu implements Iterable<MenuItem> {
         public boolean hasNext() {
             try {
                 item = this.next();
-                while(item.length() < 4 || current < values.length) {
+                while(item.getCategory() != 3 && current < menuObject.size()) {
                     item = this.next();
                 }
-                current--;
+                if (current >= menuObject.size()) {
+                    throw new NoSuchElementException();
+                } else {
+                    current--;
+                }
                 return true;
             } catch (NoSuchElementException e) {
                 return false;
@@ -172,10 +167,14 @@ public class Menu implements Iterable<MenuItem> {
         public boolean hasNext() {
             try {
                 item = this.next();
-                while(item.length() < 4 || current < values.length) {
+                while(!(item.heartHealthy) && current < menuObject.size()) {
                     item = this.next();
                 }
-                current--;
+                if (current > menuObject.size()) {
+                    throw new NoSuchElementException();
+                } else {
+                    current--;
+                }
                 return true;
             } catch (NoSuchElementException e) {
                 return false;

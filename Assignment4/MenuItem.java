@@ -5,9 +5,9 @@ public class MenuItem {
     protected boolean heartHealthy; 
     protected double price; 
 
-public MenuItem(String iteamName , int category , boolean heartHealthy, double price ){
+public MenuItem(String itemName , int category , boolean heartHealthy, double price ){
 
-    this.itemName = iteamName ;
+    this.itemName = itemName ;
     this.category = category; 
     this.heartHealthy = heartHealthy;
     this.price = price; 
