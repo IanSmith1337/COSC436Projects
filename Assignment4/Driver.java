@@ -1,5 +1,16 @@
 package Assignment4;
 
+/*
+Assignment 4:
+
+MenuItem: Prabhat, Ian
+Menu: Ian, Melissa, Prabhat
+Driver: Melissa, Ian, Prabhat
+
+Proudly produced with lots of pair programming, and copious amounts of BIG SALAD. LOL
+
+*/
+
 import java.util.*;
 
 public class Driver {
