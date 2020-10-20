@@ -1,0 +1,90 @@
+COSC 436 Object-Oriented Design and Programming
+In-class Exercise: Strategy Pattern
+
+Objective: in this in-class exercise, we will practice the strategy design pattern.
+
+Tasks: We will implement a simple Shopping Cart class, in which we have two payment strategies – using Credit Card or using PayPal.
+
+Create an interface called PaymentStrategy. In the interface, we specify a method:
+public void pay (int amount);
+
+Create a class called CreditCardStrategy, which is an implementation of algorithms for payment using credit/debit card. CreditCardStrategy should implement PaymentStrategy.
+
+In CreditCardStrategy, define String instance variables: cardHolderName, cardNo, expDate. Then, create a constructor for CreditCardStrategy, which accepts these three values and assigns to the instance variables.
+
+In CreditCardStrategy, implement the pay (int amount) method by printing out that paying the amount with credit card.
+
+Similarly, create another class called PaypalStrategy, which implements PaymentStrategy. It has two String instance variables: emailID and password. 
+
+Also create a constructor for PaypalStrategy and implement its own pay (int amount) method by displaying that paying the amount with Paypal. Now, the strategy pattern is ready. We need some code to use it.
+
+Create a class called Item, which represents each item in our shopping cart. The code is here:
+public class Item {
+	private String upcCode;
+	private int price;
+	
+	public Item(String upc, int cost){
+		this.upcCode=upc;
+		this.price=cost;
+	}
+	public String getUpcCode() {
+		return upcCode;
+	}
+	public int getPrice() {
+		return price;
+	}
+}
+
+Create a class called ShoppingCart. This is the class that accesses different strategies. Please pay attention to the pay(PaymentStrategy paymentMethod) method. It does NOT need to know what strategy you have by simply calling the interface PaymentStrategy.
+
+public class ShoppingCart {
+	List<Item> items;
+	
+	public ShoppingCart(){
+		this.items=new ArrayList<Item>();
+	}
+	
+	public void addItem(Item item){
+		this.items.add(item);
+	}
+	
+	public void removeItem(Item item){
+		this.items.remove(item);
+	}
+	
+	public int calculateTotal(){
+		int sum = 0;
+		for(Item item : items){
+			sum += item.getPrice();
+		}
+		return sum;
+	}
+	
+	public void pay(PaymentStrategy paymentMethod){
+		int amount = calculateTotal();
+		paymentMethod.pay(amount);
+	}
+}
+
+Test the strategy pattern using the following code.
+public class ShoppingCartTest {
+	public static void main(String[] args) {
+		ShoppingCart cart = new ShoppingCart();
+		Item item1 = new Item("1234",10);
+		Item item2 = new Item("5678",40);
+		
+		cart.addItem(item1);
+		cart.addItem(item2);
+		
+		//pay by paypal
+		cart.pay(new PaypalStrategy("myemail@example.com", "mypwd"));
+		
+		//pay by credit card
+		cart.pay(new CreditCardStrategy("123456789012", "786", "12/15"));
+	}
+}
+
+
+
+
+Upload your code to the Blackboard when you are done. 
