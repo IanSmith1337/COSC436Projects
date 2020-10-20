@@ -14,7 +14,7 @@ public class PaypalStrategy implements PaymentStrategy {
     @Override
     public void pay(int amount) {
         Logger logger = Logger.getLogger(CreditCardStrategy.class.getName()); 
-        logger.log(Level.INFO, "Paying $" + amount + "with " + email + "'s paypal account.");
+        logger.log(Level.INFO, "Paying $" + amount + " with " + email + "'s paypal account.");
     }
 
 

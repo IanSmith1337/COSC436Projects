@@ -1,6 +1,8 @@
 package Assignment4;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /* 
 Menu class:

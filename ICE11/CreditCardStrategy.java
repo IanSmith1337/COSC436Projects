@@ -17,6 +17,6 @@ public class CreditCardStrategy implements PaymentStrategy {
     @Override
     public void pay(int amount) {
         Logger logger = Logger.getLogger(CreditCardStrategy.class.getName()); 
-        logger.log(Level.INFO, "Paying $" + amount + "with " + cardholderName + "'s card ending in " + cardNumber.substring(11) + ", expiring on " + expDate + ".");
+        logger.log(Level.INFO, "Paying $" + amount + " with " + cardholderName + "'s card ending in " + cardNumber.substring(12) + ", expiring on " + expDate + ".");
     }
 }

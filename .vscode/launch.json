@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ShoppingCartTest",
+            "request": "launch",
+            "mainClass": "ICE11.ShoppingCartTest",
+            "projectName": "COSC 436_ca581777"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Driver",
             "request": "launch",
             "mainClass": "Assignment4.Driver",
