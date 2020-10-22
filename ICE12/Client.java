@@ -1,5 +1,10 @@
 package ICE12;
 
+/*
+Decorator Assignment
+By Ian Smith, Melissa Trick, and Prabhat Thapa
+*/
+
 public class Client {
     public static void main(String[] args) {
         Widget widget = new TextField(80, 24); // basic one

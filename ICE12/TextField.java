@@ -17,10 +17,8 @@ public class TextField implements Widget {
         String sWidth = Integer.toString(width);
         String sLength = Integer.toString(length);
         Logger log = Logger.getLogger(this.getClass().getName());
-        log.log(Level.INFO, "\n");
         log.log(Level.INFO, "This is TextField");
         log.log(Level.INFO, sWidth);
         log.log(Level.INFO, sLength);
-        log.log(Level.INFO, "\n");
     }
 }

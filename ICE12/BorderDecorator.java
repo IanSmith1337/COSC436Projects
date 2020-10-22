@@ -13,9 +13,7 @@ public class BorderDecorator extends Decorator {
     public void draw() {
         super.draw();
         Logger log = Logger.getLogger(this.getClass().getName());
-        log.log(Level.INFO, "\n");
         log.log(Level.INFO, "BorderDecorator");
-        log.log(Level.INFO, "\n");
     }
     
 }
