@@ -1,0 +1,24 @@
+Problem:
+The objective of this exercise is to implement the Decorator design pattern.
+
+Your task:
+We need to create a basic “TextField” class as the core class, and then create additional classes to add features to the basic class, such as adding borders, scroll bars. We don’t need real GUI widgets in this exercise.
+
+Steps:
+Create an interface called Widget. This is the highest level common interface shared by all classes. Inside Widget interface, define a method void draw().
+
+Create a core class called TextField that implements Widget interface. Add width and height as the two instance variables. Provide constructor in TextField, and implement the draw() method as printing out a sentence showing this is TextField with the values of width and height.
+
+Create an abstract Decorator class called Decorator and make it implements Widget interface as well. Inside Decorator class, the most important step is to create an instance variable Widget widget. This is an aggregation relationship. Provide constructor for Decorator class. Implement draw() method in Decorator. This should be just simply calling widget.draw(). 
+
+Then, we need to add some additional features. Create a class called BorderDecorator as the subclass of Decorator. In the draw() method of BorderDecorator, we should first call super.draw(), because this is how it delegates to the base core class. Then, write System.out.println(“ BorderDecorator”); to indicate this is an additional feature created in addition to the base core class.
+
+Similarly, create another decorator lass called ScrollDecorator. Implement its draw() method in the similar way, but modify the additional feature to print out “ScrollDecorator”.
+
+Finally, create a client class to show how they work. You can create objects with different features of TextField in this way:
+Widget widget = new TextField(80, 24); // basic one
+widget.draw();
+Widget widget2 = new ScrollDecorator(new TextField(80, 24)); // add scroll bar
+Widget2.draw();
+Widget widget3 = new BorderDecorator(new BorderDecorator(new ScrollDecorator(new TextField(80, 24)))); // add some borders
+Widget3.draw();
