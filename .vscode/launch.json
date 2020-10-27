@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ObserverDemo",
+            "request": "launch",
+            "mainClass": "ICE13.ObserverDemo",
+            "projectName": "COSC 436_ca581777"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ObservserDemo",
+            "request": "launch",
+            "mainClass": "ICE13.ObservserDemo",
+            "projectName": "COSC 436_ca581777"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
             "mainClass": "ICE12.Client",

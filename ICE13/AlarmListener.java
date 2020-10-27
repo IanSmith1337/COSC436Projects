@@ -1,5 +1,5 @@
 package ICE13;
 
-public class AlarmListener {
-    
+public interface AlarmListener {
+    public void alarm();
 }
