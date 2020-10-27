@@ -1,4 +1,3 @@
-package Assignment4;
 package Iterator;
 
 import java.util.*;
