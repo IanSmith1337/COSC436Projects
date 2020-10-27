@@ -1,5 +1,11 @@
 package ICE13;
 
+/*
+
+Observer by Melissa Trick and Ian Smith
+
+*/
+
 public class ObserverDemo {
     public static void main( String[] args ) {
         SensorSystem sensorSystem = new SensorSystem();
