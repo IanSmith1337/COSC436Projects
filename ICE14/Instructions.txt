@@ -1,0 +1,77 @@
+Problem:
+The objective of this exercise is to implement the command design pattern.
+Steps:
+1.	First we'll create our command interface:
+//Command
+public interface Command{
+  public void execute();
+}
+
+2.	Now let's create two concrete commands. One will turn on the lights, another turns off lights:
+//Concrete Command
+public class LightOnCommand implements Command{
+  //reference to the light
+  Light light;
+  public LightOnCommand(Light light){
+    this.light = light;
+  }
+  public void execute(){
+    light.switchOn();
+  }
+}
+
+//Concrete Command
+public class LightOffCommand implements Command{
+  //reference to the light
+  Light light;
+  public LightOffCommand(Light light){
+    this.light = light;
+  }
+  public void execute(){
+    light.switchOff();
+  }
+}
+
+3.	Light is our receiver class, so let's set that up now:
+//Receiver
+public class Light{
+  private boolean on;
+  public void switchOn(){
+    on = true;
+  }
+  public void switchOff(){
+    on = false;
+  }
+}
+
+4.	Our invoker in this case is the remote control.
+//Invoker
+public class RemoteControl{
+  private Command command;
+  public void setCommand(Command command){
+    this.command = command;
+  }
+  public void pressButton(){
+    command.execute();
+  }
+}
+
+5.	set up a client to use the invoker
+//Client
+public class Client{
+  public static void main(String[] args)    {
+    RemoteControl control = new RemoteControl();
+    Light light = new Light();
+    Command lightsOn = new LightsOnCommand(light);
+    Command lightsOff = new LightsOffCommand(light);
+    //switch on
+    control.setCommand(lightsOn);
+    control.pressButton();
+    //switch off
+    control.setCommand(lightsOff);
+    control.pressButton();
+  }
+}
+
+
+Upload your code to the Blackboard when you are done. 
