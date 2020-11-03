@@ -2,7 +2,7 @@ package ICE15;
 
 /*
 
-Observer by Melissa Trick and Ian Smith
+Observer (template pattern) by Melissa Trick and Ian Smith
 
 */
 
