@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - AdapterDemo_GoodExample",
+            "request": "launch",
+            "mainClass": "ICE16.AdapterDemo_GoodExample",
+            "projectName": "COSC 436_ca581777"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ObserverDemo",
             "request": "launch",
             "mainClass": "ICE15.ObserverDemo",
