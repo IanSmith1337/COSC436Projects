@@ -1,4 +1,5 @@
 COSC 436: Object-Oriented Design and Programming
+
 In-class Exercise: Adapter Design Pattern
 
 Problem:
@@ -8,6 +9,7 @@ class Line {
         System.out.println("Line from point A("+x1+";"+y1+"), to point B("+x2+";"+y2+")");
     }
 }
+
 class Rectangle {
     public void draw(int x, int y, int width, int height) {
         System.out.println("Rectangle with coordinate left-down point (" + x + ";" + y + "), width: " + width + ", height: " + height);
@@ -29,6 +31,7 @@ public class AdapterDemo_BadExample {
         }
     }
 }
+
 Your task:
 We need to create adapters for Line and Rectangle so that they can be wrapped and the client can simply use the following code to “draw” them, without checking their types.
 public class AdapterDemo_GoodExample {
@@ -40,6 +43,7 @@ public class AdapterDemo_GoodExample {
         }
     }
 }
+
 Steps:
 
 From Blackboard, download the old Line and Rectangle classes to your IDE. Do not change anything in them.
