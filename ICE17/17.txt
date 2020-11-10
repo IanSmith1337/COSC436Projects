@@ -1,0 +1,93 @@
+Problem:
+The objective of this exercise is to implement the Factory Method design pattern.
+
+Tasks:
+In this exercise, Buttons play a product role and Dialogs act as creators. Different types of dialogs require their own types of elements. We will create a subclass for each dialog type and override their factory methods. Each dialog type will instantiate proper button classes. Base dialog works with products using their common interface, so its code remains functional after all changes.
+1.	We have an interface, called Button, which defines two methods, render() and onClick().
+2.	Create an HtmlButton class, which implements Button. Provide the implementation for both render() and onClick() methods.
+public void render() {
+        System.out.println("<button>Test Button</button>");
+        onClick();
+    }
+
+    public void onClick() {
+        System.out.println("Click! Button says - 'Hello World!'");
+    }
+3.	Create a WindowsButton class, which also implements Button. Provide the implementation for both render() and onClick() methods.
+    
+    JPanel panel = new JPanel();
+    JFrame frame = new JFrame();
+    JButton button;
+
+    public void render() {
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JLabel label = new JLabel("Hello World!");
+        label.setOpaque(true);
+        label.setBackground(new Color(235, 233, 126));
+        label.setFont(new Font("Dialog", Font.BOLD, 44));
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        frame.getContentPane().add(panel);
+        panel.add(label);
+        onClick();
+        panel.add(button);
+
+        frame.setSize(320, 200);
+        frame.setVisible(true);
+        onClick();
+    }
+
+    public void onClick() {
+        button = new JButton("Exit");
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                System.exit(0);
+            }
+        });
+    }
+
+4.	Create a base creator, called Dialog. Have two methods in it. 
+public void renderWindow() {
+        Button okButton = createButton();
+        okButton.render();
+    }
+public abstract Button createButton();
+5.	Create two concrete creators: HtmlDialog and WindowsDialog, by providing implementation for the abstract method createButton(). One returns new WindowsButton(), the other returns new HtmlButton().
+
+6.	Use the following client code to test it.
+
+public class Client {
+    private static Dialog dialog;
+
+    public static void main(String[] args) {
+        configure();
+        run();
+    }
+
+    /**
+     * The concrete factory is usually chosen depending on configuration or
+     * environment options.
+     */
+    static void configure() {
+        if (System.getProperty("os.name").equals("Windows 10")) {
+            dialog = new WindowsDialog();
+        } else {
+            dialog = new HtmlDialog();
+        }
+    }
+
+    /**
+     * All of the client code should work with factories and products through
+     * abstract interfaces. This way it does not care which factory it works
+     * with and what kind of product it returns.
+     */
+    static void run() {
+        dialog.renderWindow();
+    }
+}
+
+7.	Can you draw a class diagram for these classes?
+
+
+Upload your code to the Blackboard when you are done.
