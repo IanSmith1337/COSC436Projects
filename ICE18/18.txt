@@ -4,7 +4,6 @@ In-class Exercise: Abstract Factory Design Pattern
 Problem:
 The objective of this exercise is to implement the Abstract Factory design pattern.
 
- 
 Steps:
 Create an interface called Shape. It defines a public method draw(). Create three subclasses (Circle, Square, and Rectangle) as indicated in the class diagram above. Each subclass implements draw() method by printing out a string as “Inside xxx.draw() method”. For example, in Circle, it should print out “inside Circle.draw() method”.
 Create an interface called Color. It defines a public method fill(). Create three subclasses (Red, Green, and Blue) as indicated in the class diagram above. Each subclass implements fill() method by printing out a string as “Inside xxx.fill() method”. For example, in Red, it should print out “inside Red.fill() method”.
