@@ -42,6 +42,7 @@ public class Client {
         System.out.println("1: Start New Recipt ");
         System.out.println("2: Add items");
         System.out.println("3 Display Recipt");
+        System.out.println("Press any Key other than 1, 2 and 3 to Exit ");
 
 	}
     
