@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "ICE19.Client",
+            "projectName": "COSC 436_ca581777"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "ICE18.Client",
             "projectName": "COSC 436_ca581777"
         },

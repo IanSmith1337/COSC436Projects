@@ -1,0 +1,52 @@
+Problem:
+The objective of this exercise is to implement the Builder design pattern.
+Steps:
+1.	Create a class called Pizza. This is the product we are building. In Pizza, create three instance variables: dough, sauce, and topping. They are String type. Add getters and setters for them.
+
+2.	Create an abstract class called PizzaBuilder. This is the abstract Builder. Its code is shown below:
+abstract class PizzaBuilder {
+    protected Pizza pizza;
+
+    public Pizza getPizza() {
+        return pizza;
+    }
+
+    public void createNewPizzaProduct() {
+        pizza = new Pizza();
+    }
+
+    public abstract void buildDough();
+    public abstract void buildSauce();
+    public abstract void buildTopping();
+}
+
+3.	Create a concrete builder class, called HawaiianPizzaBuilder. It is a subclass of PizzaBuilder. Implement the three abstract methods (buildDough(), buildSauce(), and buildTopping()) in HawaiianPizzaBuilder, by calling the setters of pizza object. You are free to set any strings to specify the way that the pizza is cooked in each of the three builder methods.
+
+4.	Similarly, create another concrete builder class, called SpicyPizzaBuilder. It is also a subclass of PizzaBuilder. Implement the three abstract methods (buildDough(), buildSauce(), and buildTopping()) in HawaiianPizzaBuilder, by calling the setters of pizza object.
+
+5.	Create a director class called Waiter. It directs how we can build a pizza. Its code is shown below:
+class Waiter {
+    private PizzaBuilder pizzaBuilder;
+
+    public void setPizzaBuilder(PizzaBuilder pb) {
+        pizzaBuilder = pb;
+    }
+
+    public Pizza getPizza() {
+        return pizzaBuilder.getPizza();
+    }
+
+    public void constructPizza() {
+        pizzaBuilder.createNewPizzaProduct();
+        pizzaBuilder.buildDough();
+        pizzaBuilder.buildSauce();
+        pizzaBuilder.buildTopping();
+    }
+}
+
+6.	Create a client class to demonstrate how the above Builder design pattern works.
+
+7.	Draw a class diagram for the above Builder design pattern on the back of the paper. (optional)
+
+
+Upload your code to the Blackboard when you are done. 
