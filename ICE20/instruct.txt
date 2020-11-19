@@ -1,0 +1,39 @@
+Problem:
+The objective of this exercise is to implement the Visitor design pattern.
+Steps:
+1.	Create an interface called Element. This is the interface (super class) for all the classes that we want to “visit.” Define a method signature in Element:
+void accept (Visitor v);
+
+2.	Create three sub classes: FOO, BAR, and BAZ. Make them all implement Element interface. What you need to do is to implement the accept method in the following way:
+public void accept(Visitor v) {
+        v.visit(this);
+    }
+
+3.	Add getters in all the three classes above by returning a string with their class name.
+
+4.	Create an interface called Visitor. This is the interface (super class) for all the visitors. Define three method signatures in it:
+	    	void visit(FOO foo);
+    		void visit(BAR bar);
+    		void visit(BAZ baz);
+
+5.	Create two concrete visitors: UpVisitor and DownVisitor, to implement Visitor interface. Implementing their visit methods by printing out (“up visit on ” + their getters) for UpVisitor and (“down visit on ” + their getters) for DownVisitor. 
+
+6.	Use the below client code to try this pattern.
+public class VisitorDemo {
+    public static void main( String[] args ) {
+        Element[] list = {new FOO(), new BAR(), new BAZ()};
+        UpVisitor up = new UpVisitor();
+        DownVisitor down = new DownVisitor();
+        for (Element element : list) {
+            element.accept(up);
+        }
+        for (Element element : list) {
+            element.accept(down);
+        }
+    }
+}
+
+7.	Draw a class diagram for this pattern. (optional)
+
+
+Upload your code to the Blackboard when you are done.
