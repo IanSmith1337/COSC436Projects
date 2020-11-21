@@ -12,6 +12,5 @@ public abstract class Decorator implements Receipt {
 	protected void callTrailer()  {
 		trailer.prtReceipt();
 	}
-
-	public abstract void prtReceipt();
+	
 }

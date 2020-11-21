@@ -61,30 +61,6 @@ A UML class diagram for the design of this program is given below.
 INTERFACES AND CLASSES TO UTILIZE
 Following are the interface and classes to be used in the design of the program.
 
-CLIENT CODE
-
-public static void main(String[] args)
-{
-	// 1.	Creates a PurchasedItems object.
-	// 2.	Constructs ReceiptFactory object.
-	// 3.	Prompts user for items to purchase, storing each in PurchasedItems.
-	// 4.	Calls the getReceipt method of the factory to obtain constructed receipt.
-	// 5.	Prints receipt by method call to constructed receipt.
-
-	// get receipt date
-	// (prompt user for current date)
-
-	// display all available products to user
-	(to be implemented)
-
-	// get all user selections
-	(to be implemented)
-
-	ReceiptFactory factory = new ReceiptFactory();
-	Receipt receipt = factory.getReceipt(items, date);
-	receipt.prtReceipt();
-}
-
 PROGRAM TO CREATE
 Create a program that will create of and display Best Buy receipts. The program should provide a main menu as in the following,
 

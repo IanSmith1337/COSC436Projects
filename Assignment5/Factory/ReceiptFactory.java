@@ -9,9 +9,12 @@ public class ReceiptFactory {
 	String state_code;
 
 	private TaxComputation[] taxComputationsObjs;    // tax computation objects (for each state)
+	private TaxComputation state; 
 	private AddOn[] addOns;   // secondary header, rebate and coupon add-ons
 	
 	public ReceiptFactory() {  
+		//TaxComputation MD, DE , CA ; 
+		//taxComputationsObjs
 
 		
 	// constructor

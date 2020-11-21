@@ -2,31 +2,21 @@ package Assignment5.TaxComputation;
 
 import Assignment5.Class.*;
 import Assignment5.abstractClass.*;
+
 import java.util.Calendar;
 
 public class MDTaxComputation extends TaxComputation {
 	
-	public double computeTax(PurchasedItems items, ReceiptDate date) {
-        taxHoliday(date);
-        if(//there is NO tax holiday)
-        {
-            
+	public double computeTax(PurchasedItems items, Calendar date) {
+        if(!taxHoliday(date)){
+            return 0.06;
         }
-        else //tax holiday
-        {
-            //calculate no tax
+        else {
+            return 0.00;
         }
-        }
-		// calls private method taxHoliday as part of this computation
     }
 
-    private boolean taxHoliday(ReceiptDate date)
-    {
-        if(date  )
+    protected boolean taxHoliday(Calendar date) {
+        return (date.get(Calendar.MONTH) != 8 && (date.get(Calendar.DAY_OF_MONTH) > 14 && date.get(Calendar.DAY_OF_MONTH) > 20));
     }
-    
-		// returns true if date of receipt within the state’s tax free holiday,
-		// else returns false. Supporting method of method computeTax.	
 }
-
-//  tax computation objects for other states are similar  (to be completed)

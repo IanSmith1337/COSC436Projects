@@ -1,6 +1,6 @@
 package Assignment5.Class;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import Assignment5.abstractClass.*;
 import Assignment5.interfaces.*;
@@ -10,7 +10,7 @@ public class BasicReceipt implements Receipt {
 	private String stateCode;  	// MD, DE, CA or MA
 
 	private PurchasedItems items;
-	private Date date;
+	private Calendar date;
 	private TaxComputation tc;
 
 	public BasicReceipt(PurchasedItems items) {
@@ -21,7 +21,7 @@ public class BasicReceipt implements Receipt {
 		this.tc = tc; 
 	}
 
-	public void setDate(Date date) { 
+	public void setDate(Calendar date) { 
 		this.date = date; 
 	}
 

@@ -1,10 +1,17 @@
 package Assignment5.TaxComputation;
 
-public class MDTaxComputation extends TaxComputation {
+import Assignment5.Class.*;
+import Assignment5.abstractClass.*;
+
+import java.util.Calendar;
+
+public class CATaxComputation extends TaxComputation {
 	
-	public double computeTax(PurchasedItems items, ReceiptDate date) {
-		// calls private method taxHoliday as part of this computation
+	public double computeTax(PurchasedItems items, Calendar date) {
+		return .075;
 	}
 
-//no tax holidays
+	protected boolean taxHoliday(Calendar date) {
+		return false;
+	}
 }
