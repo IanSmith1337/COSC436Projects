@@ -27,5 +27,6 @@ public class BasicReceipt implements Receipt {
 
 	@Override
 	public void prtReceipt() {
+		//TODO
 	}
 }

@@ -13,7 +13,13 @@ public class Client {
         int key;
         Calendar date;
         PurchasedItems purchasedItems = new PurchasedItems();
-        ReceiptFactory factory = new ReceiptFactory();
+        ReceiptFactory factory;
+        try {
+            factory = new ReceiptFactory();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
         Scanner input = new Scanner(System.in);
         boolean stats = true;
         do {
