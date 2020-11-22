@@ -17,6 +17,6 @@ public class MATaxComputation extends TaxComputation {
     }
 
 	protected boolean taxHoliday(Calendar date){
-		return (date.get(Calendar.MONTH) != 8 && (date.get(Calendar.DAY_OF_MONTH) > 8 && date.get(Calendar.DAY_OF_MONTH) > 14));
+		return (date.get(Calendar.MONTH) == 8 && (date.get(Calendar.DAY_OF_MONTH) > 8 && date.get(Calendar.DAY_OF_MONTH) > 14));
 	}
 }

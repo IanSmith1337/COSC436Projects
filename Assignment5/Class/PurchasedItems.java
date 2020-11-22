@@ -1,6 +1,7 @@
 package Assignment5.Class;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PurchasedItems {
 	private ArrayList<StoreItem> items;  	
@@ -11,6 +12,10 @@ public class PurchasedItems {
 
 	public void addItem(StoreItem item) {
 		items.add(item);		
+	}
+
+	public List<StoreItem> getItems() {
+		return items;
 	}
 
 	public double getTotalCost() {

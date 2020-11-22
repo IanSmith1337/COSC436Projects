@@ -38,9 +38,9 @@ public class ReceiptFactory {
 			String store_addr = file.nextLine();
 			int phone = Integer.parseInt(file.nextLine());
 			int store_num = Integer.parseInt(file.nextLine());
-			this.header = "Best Buy #" + store_num + "\n    ";
-			this.header = this.header.concat(phone + "    \n");
-			this.header = this.header.concat(store_addr + "\n");
+			this.header = "Best Buy #" + store_num;
+			this.header = this.header.concat("\n" + phone);
+			this.header = this.header.concat("\n" + store_addr);
 			this.state_code = file.nextLine();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,18 +65,36 @@ public class ReceiptFactory {
 	}
 
 	public Receipt getReceipt(PurchasedItems items, Calendar date) {
-		BasicReceipt complete = new BasicReceipt(items);
-		complete.setDate(date);
-		complete.setTaxComputation(this.state);
-
+		BasicReceipt bc = new BasicReceipt(items);
+		bc.setDate(date);
+		bc.setTaxComputation(this.state);
+		bc.setStoreInfo(this.header + "\n");
+		Receipt receipt = null;
 		for (AddOn a : addOns) {
 			if(a.applies(items)){
-				String interface = a.getClass().getInterfaces()[1].toString();
-				if(interface.toString().equals("Rebate")) {
-
+				String iString = a.getClass().getInterfaces()[1].toString();
+				if(iString.equals("interface Assignment5.interfaces.Rebate")) {
+					receipt = new PostDecorator(a, bc);
 				}
 			}
 		}
+		for (AddOn a : addOns) {
+			if(a.applies(items)){
+				String iString = a.getClass().getInterfaces()[1].toString();
+				if(iString.equals("interface Assignment5.interfaces.Coupon")) {
+					receipt = new PostDecorator(a, bc);
+				}
+			}
+		}
+		for (AddOn a : addOns) {
+			if(a.applies(items)){
+				String iString = a.getClass().getInterfaces()[1].toString();
+				if(iString.equals("interface Assignment5.interfaces.SecondaryHeading")) {
+					receipt = new PreDecorator(a, receipt);
+				}
+			}
+		}
+		return receipt;
 	// TODO
 	// 1.	Sets the current date of the BasicReceipt.
 	// 2.	Attaches the StateComputation object to the BasicReceipt (by call to the setComputation method of BasicReceipt).
@@ -84,6 +102,5 @@ public class ReceiptFactory {
 	// 4.	Links in the decorator object based on the Decorator design pattern.
 	// 5.	Adds current date to 
 	// 6.	Returns decorated BasicReceipt object as type Receipt.
-
 	}
 }
