@@ -70,7 +70,7 @@ public class Client {
                     purchasedItems.addItem(new StoreItem(code, description, price));
                     break;
                 case 3:
-
+                    factory.getReceipt(purchasedItems, date);
                     break;
                 default:
                     stats = false;

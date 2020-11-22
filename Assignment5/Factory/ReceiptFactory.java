@@ -3,8 +3,8 @@ package Assignment5.Factory;
 import Assignment5.abstractClass.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.rmi.NoSuchObjectException;
+import java.util.Calendar;
 import java.util.Scanner;
 
 import Assignment5.Class.*;
@@ -17,10 +17,10 @@ import Assignment5.interfaces.*;
 public class ReceiptFactory {
 	String header; // contains line with “Best Buy”, store_num, street_addr, phone
 	String state_code;
-
+	
 	private TaxComputation[] taxComputationsObjs = new TaxComputation[4]; // tax computation objects (for each state)
 	private TaxComputation state;
-	private AddOn[] addOns = new addOns[3]; // secondary header, rebate and coupon add-ons
+	private AddOn[] addOns = new AddOn[3]; // secondary header, rebate and coupon add-ons
 
 	public ReceiptFactory() throws NoSuchObjectException {
 
@@ -28,6 +28,7 @@ public class ReceiptFactory {
 			Object[] a = {new MDTaxComputation(), new MATaxComputation(), new CATaxComputation(), new DETaxComputation()};
 			this.taxComputationsObjs[i] = (TaxComputation) a[i];
 		}
+
 		for(int i = 0; i < addOns.length; i++) {
 			Object[] a = {new HolidayGreeting(), new Rebate1406(), new Coupon100Get10Percent()};
 			this.addOns[i] = (AddOn) a[i];
@@ -63,9 +64,19 @@ public class ReceiptFactory {
 		}
 	}
 
-	public Receipt getReceipt(PurchasedItems items) {
-		return null;
+	public Receipt getReceipt(PurchasedItems items, Calendar date) {
+		BasicReceipt complete = new BasicReceipt(items);
+		complete.setDate(date);
+		complete.setTaxComputation(this.state);
 
+		for (AddOn a : addOns) {
+			if(a.applies(items)){
+				String interface = a.getClass().getInterfaces()[1].toString();
+				if(interface.toString().equals("Rebate")) {
+
+				}
+			}
+		}
 	// TODO
 	// 1.	Sets the current date of the BasicReceipt.
 	// 2.	Attaches the StateComputation object to the BasicReceipt (by call to the setComputation method of BasicReceipt).
