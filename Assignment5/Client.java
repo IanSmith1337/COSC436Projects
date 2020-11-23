@@ -8,6 +8,27 @@ import Assignment5.Class.*;
 import Assignment5.Factory.ReceiptFactory;
 import Assignment5.interfaces.Receipt;
 
+/*
+Best Buy Receipt Program (Assignment 5)
+
+By Ian Smith, Melissa Trick and Prabhat Thapa
+
+This program takes a file input containing store info and sets up a receipt through user input. 
+It also calculates total cost including tax for the items purchased.
+
+Who did what:
+
+Ian:
+Client, ReceiptFactory, BasicReceipt's prtReceipt, Getters and Setters for StoreItem, PurchasedItems.
+
+Melissa:
+ReceiptFactory, StoreItem, PurchasedItems, TaxComputation Classes, Rebate1406, Coupon100get10Percent, HolidayGreeting.
+
+Prabhat:
+Interfaces, PostDecorator and PreDecorator, Client UX and user input handling, BasicReceipt's base Class, ReceiptFactory's base class. 
+
+*/
+
 public class Client {
     public static void main(String[] args) {
         int key;
