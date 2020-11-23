@@ -65,36 +65,25 @@ public class ReceiptFactory {
 	}
 
 	public Receipt getReceipt(PurchasedItems items, Calendar date) {
-		BasicReceipt bc = new BasicReceipt(items);
-		bc.setDate(date);
-		bc.setTaxComputation(this.state);
-		bc.setStoreInfo(this.header + "\n");
-		Receipt receipt = null;
-		for (AddOn a : addOns) {
-			if(a.applies(items)){
-				String iString = a.getClass().getInterfaces()[1].toString();
-				if(iString.equals("interface Assignment5.interfaces.Rebate")) {
-					receipt = new PostDecorator(a, bc);
-				}
-			}
-		}
-		for (AddOn a : addOns) {
-			if(a.applies(items)){
-				String iString = a.getClass().getInterfaces()[1].toString();
-				if(iString.equals("interface Assignment5.interfaces.Coupon")) {
-					receipt = new PostDecorator(a, bc);
-				}
-			}
-		}
+		BasicReceipt.setDate(date);
+		BasicReceipt.setTaxComputation(this.state);
+		BasicReceipt.setStoreInfo(this.header + "\n");
+		Receipt basic = new BasicReceipt(items);
 		for (AddOn a : addOns) {
 			if(a.applies(items)){
 				String iString = a.getClass().getInterfaces()[1].toString();
 				if(iString.equals("interface Assignment5.interfaces.SecondaryHeading")) {
-					receipt = new PreDecorator(a, receipt);
+					basic = new PreDecorator(a, basic);
+				}
+				if(iString.equals("interface Assignment5.interfaces.Rebate")) {
+					basic = new PostDecorator(a, basic);
+				}
+				if(iString.equals("interface Assignment5.interfaces.Coupon")) {
+					basic = new PostDecorator(a, basic);
 				}
 			}
 		}
-		return receipt;
+		return basic;
 	// TODO
 	// 1.	Sets the current date of the BasicReceipt.
 	// 2.	Attaches the StateComputation object to the BasicReceipt (by call to the setComputation method of BasicReceipt).

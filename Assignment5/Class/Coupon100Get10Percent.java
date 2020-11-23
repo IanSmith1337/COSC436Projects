@@ -16,7 +16,7 @@ public class Coupon100Get10Percent implements AddOn, Coupon {
       }
 
       private String print(Calendar date) {
-            String expire = "10% off your next order!\n" + "Expires:\n ";
+            String expire = "--------------------------------\n10% off your next order!\n" + "Expires:\n ";
             String ampm;
             expire = expire.concat(Integer.toString(date.get(Calendar.MONTH)+1)); 
             expire = expire.concat("/"); 
@@ -33,6 +33,7 @@ public class Coupon100Get10Percent implements AddOn, Coupon {
                 ampm = " AM";
             }
             expire = expire.concat(ampm);
+            expire = expire.concat("\n--------------------------------");
             return expire;
         }
 }

@@ -12,8 +12,8 @@ public class PostDecorator extends Decorator {
 	}
 
 	public void prtReceipt() {
-		System.out.println(a.getLines());
 		callTrailer();
+		System.out.println(a.getLines());
 	}
 }
 

@@ -70,6 +70,7 @@ public class Client {
                         break;
                     case 3:
                         Receipt receipt = factory.getReceipt(purchasedItems, date);
+                        System.out.println("\n\n--------------------------------");
                         receipt.prtReceipt();
                         stats = false;
                         break;

@@ -6,33 +6,34 @@ import Assignment5.abstractClass.*;
 import Assignment5.interfaces.*;
 
 public class BasicReceipt implements Receipt {
-	private String storeInfo;  	// store number, store address, phone number
+	private static String storeInfo;  	// store number, store address, phone number
 	private String stateCode;  	// MD, DE, CA or MA
 
-	private PurchasedItems items;
-	private Calendar date;
-	private TaxComputation tc;
+	private static PurchasedItems items;
+	private static Calendar date;
+	private static TaxComputation tc;
 
 	public BasicReceipt(PurchasedItems items) {
-		this.items = items;
+		BasicReceipt.items = items;
 	}
 
-	public void setTaxComputation(TaxComputation tc) { 
-		this.tc = tc; 
+	public static void setTaxComputation(TaxComputation tc) {
+		BasicReceipt.tc = tc;
 	}
 
-	public void setDate(Calendar date) { 
-		this.date = date; 
+	public static void setDate(Calendar date) { 
+		BasicReceipt.date = date; 
 	}
 
-	public void setStoreInfo(String storeInfo) {
-		this.storeInfo = storeInfo;
+	public static void setStoreInfo(String storeInfo) {
+		BasicReceipt.storeInfo = storeInfo;
 	}
 
 	@Override
 	public void prtReceipt() {
-		System.out.print(this.storeInfo);
+		System.out.print(BasicReceipt.storeInfo);
 		printDate(date);
+		System.out.println("");
 		for(StoreItem item : items.getItems()) {
 			System.out.print(item.getItemCode());
 			System.out.print("     ");
@@ -41,9 +42,9 @@ public class BasicReceipt implements Receipt {
 			System.out.print(item.getItemPrice());
 			System.out.println();
 		}
-		System.out.println("Subtotal: " + this.items.getTotalCost());
-		System.out.println("Tax: " + this.items.getTotalCost() * tc.computeTax(items, date));
-		System.out.println("Total: " + ((this.items.getTotalCost() * tc.computeTax(items, date)) + this.items.getTotalCost()));
+		System.out.println("\nSubtotal: " + BasicReceipt.items.getTotalCost());
+		System.out.println("Tax: " + BasicReceipt.items.getTotalCost() * tc.computeTax(items, date));
+		System.out.println("Total: " + ((BasicReceipt.items.getTotalCost() * tc.computeTax(items, date)) + BasicReceipt.items.getTotalCost()) + "\n");
 	}
 
 	private void printDate(Calendar date) {
