@@ -37,6 +37,8 @@ public class Driver {
         shapeVar.setLocation(location_value);
 
         System.out.println(shapeVar.print());
+
+        scan.close();
     }
 }
 

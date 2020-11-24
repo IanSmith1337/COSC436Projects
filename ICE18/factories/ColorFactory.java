@@ -22,4 +22,3 @@ public class ColorFactory extends AbstractFactory  {
 		return null;
 	}
 }
-}

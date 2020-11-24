@@ -129,8 +129,6 @@ public class LinkedList436 {
 	
 	
 	private class Node {
-
-		//TODO: PLEASE FINISH THIS INNER CLASS.
 		// reference to the next node in the chain, or null if there isn't one.
 		Node next;
  
