@@ -1,14 +1,21 @@
 package Assignment6;
 
 class SystemInterface {
-    //TODO: The SystemInterface can be a class of all static methods – one for each of the three commands of the user interface, 
-    //if it does not have any state in your extension of the program
 
-public static Invoker invoker; 
+    private static Invoker invoke = new Invoker();
 
+    public static Menu getMenu() {
+        return invoke.getMenu();
+    }
 
+    public static Tab getTab() {
+        return invoke.getTab(); 
 
+    }
 
+	public static Object getOrder() {
+		return invoke.getOrders();
+	}
 
 
 }

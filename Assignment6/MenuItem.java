@@ -24,6 +24,11 @@ public class MenuItem {
     public double getPrice() {
         return price;
     }
+
+    public String toString() {
+        return (itemName + "  " + description + "  " + price ) ; 
+
+    }
 }
 //A MenuItem object will store the menu item #, the description, and its cost
 

@@ -2,7 +2,35 @@ package Assignment6;
 
 public class Invoker {
 
-    private static 
+   
+    Aggregator agObj = new Aggregator();
+
+    public Menu getMenu() {
+        return new cmdGetMenu(agObj).execute();
+        
+    }
+
+    public Orders getOrders() {
+		return new cmdSubmitOrder(agObj).execute();
+
+       // return; 
+
+    }
+
+    public Tab getTab() {
+
+        double totalCost = 0 ; 
+
+
+
+        return null; 
+
+         //return
+
+    }
+       
+    
+
     
 }
 
