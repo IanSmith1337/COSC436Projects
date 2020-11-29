@@ -1,4 +1,8 @@
-package Assignment6;
+package Assignment6.CommandPattern.Classes;
+
+import Assignment6.Menu;
+import Assignment6.Orders;
+import Assignment6.Tab;
 
 public class SystemInterface {
 

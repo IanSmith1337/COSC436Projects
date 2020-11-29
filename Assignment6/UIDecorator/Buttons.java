@@ -1,10 +1,12 @@
 package Assignment6.UIDecorator;
 
 import java.awt.event.*;
+import java.awt.*;
 import javax.swing.*;
 
 import Assignment6.*;
-import Assignment6.Factory.*;
+import Assignment6.Menu;
+import Assignment6.MenuItem;
 
 public class Buttons implements ActionListener, UIElements {
     JPanel panel;
@@ -30,12 +32,12 @@ public class Buttons implements ActionListener, UIElements {
         String action = e.getActionCommand();
         switch(action.toLowerCase()) {
             case "menu":
-                MenuWindow w = new MenuWindow();
-                w.addText("Menu:");
+                UIElements mw = new MenuWindow(new JFrame("Ordering Client V1.0 - Menu Display"), new JPanel(new GridLayout(0, 1)));
+                ((MenuWindow) mw).addText("Menu:");
                 for (MenuItem item : menu.getMenu()) {
-                    w.addText(item.getItemName() + "       " + item.getPrice());
+                    ((MenuWindow) mw).addText(item.getItemName() + "       " + item.getPrice());
                 }
-                w.make();
+                mw.create();
                 break;
             case "order":
                 break;

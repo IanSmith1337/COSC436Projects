@@ -1,10 +1,14 @@
 package Assignment6.UIDecorator;
 
-import javax.swing.*;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
-import Assignment6.SystemInterface;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-import java.awt.*;
+import Assignment6.CommandPattern.Classes.SystemInterface;
 
 public class UI {
         // TODO: The user interface should just be a text-based numbered list of options, implemented in the main method. (It can be a GUI if you desire and are familiar with the development of GUIs, but no extra points will be given for this).        

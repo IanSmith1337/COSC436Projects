@@ -1,5 +1,7 @@
-package Assignment6.Commands; 
+package Assignment6.CommandPattern.Commands;
+
 import Assignment6.*;
+import Assignment6.CommandPattern.Classes.*;
 
 public class SubmitOrder implements Command {
     private Aggregator ag; 

@@ -1,6 +1,7 @@
-package Assignment6;
+package Assignment6.CommandPattern.Classes;
 
-import Assignment6.Commands.*;
+import Assignment6.*;
+import Assignment6.CommandPattern.Commands.*;
 
 public class Invoker {
 

@@ -4,12 +4,14 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import javax.swing.*;
-public class MenuWindow {
+public class MenuWindow implements UIElements {
     private JPanel base;
     private ArrayList<JLabel> labels = new ArrayList<>();
+    private JFrame frame;
 
-    public MenuWindow(){
-        this.base = new JPanel(new GridLayout(0, 1));
+    public MenuWindow(JFrame frame, JPanel base) {
+        this.frame = frame;
+        this.base = base;
     }
 
     public void addText(String input) {
@@ -17,8 +19,7 @@ public class MenuWindow {
         this.labels.add(label);
     }
 
-    public void make(){
-        JFrame frame = new JFrame("Ordering Client V1.0 - Menu Display");
+    public void create(){
         GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
         Point centerShiftedPoint = graphics.getCenterPoint();
         frame.add(base);

@@ -1,6 +1,8 @@
-package Assignment6.Commands;
-import Assignment6.*;
+package Assignment6.CommandPattern.Commands;
 
+import Assignment6.*;
+import Assignment6.CommandPattern.Classes.*;
+ 
 public class GetMenu  implements Command {
     private Aggregator ag; 
 
