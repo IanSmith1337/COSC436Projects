@@ -7,6 +7,7 @@ public class Aggregator {
 
     private Menu menuObject; 
     private Orders orderObject; 
+    private Tab tabObject; 
     private OrderItem o;
     private MenuItem i;
 
@@ -32,6 +33,10 @@ public class Aggregator {
 
     public Orders getOrder() {
         return orderObject;
+    } 
+
+    public Tab getTab() {
+        return tabObject;
     } 
 
 }

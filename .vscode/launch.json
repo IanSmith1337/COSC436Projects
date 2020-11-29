@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - UI",
             "request": "launch",
+            "mainClass": "Assignment6.UIDecorator.UI",
+            "projectName": "COSC 436_ca581777"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UI",
+            "request": "launch",
             "mainClass": "Assignment6.UI",
             "projectName": "COSC 436_ca581777"
         },

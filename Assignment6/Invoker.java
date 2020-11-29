@@ -1,36 +1,22 @@
 package Assignment6;
 
+import Assignment6.Commands.*;
+
 public class Invoker {
 
-   
     Aggregator agObj = new Aggregator();
 
     public Menu getMenu() {
-        return new cmdGetMenu(agObj).execute();
-        
+        return new GetMenu(agObj).execute();
     }
 
     public Orders getOrders() {
-		return new cmdSubmitOrder(agObj).execute();
-
-       // return; 
-
+		return new SubmitOrder(agObj).execute();
     }
 
     public Tab getTab() {
-
-        double totalCost = 0 ; 
-
-
-
-        return null; 
-
-         //return
-
+        return new GetTab(agObj).execute(); 
     }
-       
-    
-
     
 }
 

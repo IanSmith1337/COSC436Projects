@@ -1,4 +1,4 @@
-package Assignment6;
+package Assignment6.UIDecorator;
 
 import java.awt.*;
 import java.util.ArrayList;

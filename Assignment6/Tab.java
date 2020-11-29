@@ -14,8 +14,8 @@ public class Tab {
 
     public void getTab() {
 
-        double cost = 0 ; 
-        // just gonna  get item cost and stiff and dis[lay user tab  
+        double cost = 0; 
+        // just gonna  get item cost and stiff and display user tab  
 
         for (OrderItem item : orders.getOrder()) {
             if(orders.menuHasItem(item.getItemNumber(), menu)){

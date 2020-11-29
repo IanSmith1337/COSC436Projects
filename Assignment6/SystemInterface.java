@@ -1,6 +1,6 @@
 package Assignment6;
 
-class SystemInterface {
+public class SystemInterface {
 
     private static Invoker invoke = new Invoker();
 
@@ -13,7 +13,7 @@ class SystemInterface {
 
     }
 
-	public static Object getOrder() {
+	public static Orders getOrders() {
 		return invoke.getOrders();
 	}
 
