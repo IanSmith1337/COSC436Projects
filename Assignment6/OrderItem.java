@@ -10,5 +10,7 @@ public class OrderItem {
     public int getItemNumber(){
         return itemNumber;
     }
+
+
 }
 //An OrderItem object will store an order by its item number only (not its description)

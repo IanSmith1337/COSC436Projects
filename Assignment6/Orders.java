@@ -1,13 +1,14 @@
 package Assignment6;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import Assignment6.CommandPattern.Classes.SystemInterface;
 
 public class Orders {
-        private ArrayList<OrderItem> order = new ArrayList<>();
+        private List<OrderItem> order = new ArrayList<>();
 
-		public ArrayList<OrderItem> getOrder() {
+		public List<OrderItem> getOrder() {
 			return order;
 		}
 
@@ -15,6 +16,7 @@ public class Orders {
 			if (menuHasItem(item.getItemNumber(), SystemInterface.getMenu())) {
 				this.order.add(item);
 			}
+			
 		}
 
 		public boolean menuHasItem(int number, Menu menu) {

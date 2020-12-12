@@ -7,6 +7,7 @@ import javax.swing.*;
 import Assignment6.*;
 import Assignment6.Menu;
 import Assignment6.MenuItem;
+import Assignment6.CommandPattern.Classes.SystemInterface;
 
 public class Buttons implements ActionListener, UIElements {
     JPanel panel;
@@ -40,8 +41,24 @@ public class Buttons implements ActionListener, UIElements {
                 mw.create();
                 break;
             case "order":
+                UIElements orderWindow = new OrderWindow(new JFrame("Ordering Client V1.0 - Order Display"), new JPanel(new GridLayout(0, 1)));
+                ((OrderWindow) orderWindow).addButton("Add New Item", "Add");
+                ((OrderWindow) orderWindow).addButton("Remove Last Item", "Undo");
+                ((OrderWindow) orderWindow).addButton("Display Order", "Display");
+                orderWindow.create();
                 break;
             case "tab":
+                double total = 0;
+                UIElements tabw = new TabWindow(new JFrame("Ordering Client V1.0 - Tab Display"), new JPanel(new GridLayout(0, 1)), total);
+                ((TabWindow) tabw).addText("Tab:");
+                this.tab = new Tab(SystemInterface.getMenu(), SystemInterface.getOrders());
+                for (MenuItem item : tab.getTab()) {
+                    ((TabWindow) tabw).addText(item.toString());
+                    total += item.getPrice();
+                }
+                ((TabWindow) tabw).setCost(total);
+                ((TabWindow) tabw).addButton("Retrieve Check and Pay");
+                tabw.create();
                 break;
             default:
                 break;
