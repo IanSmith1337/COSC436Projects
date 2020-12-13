@@ -22,4 +22,3 @@ public class Menu {
         return null;
 	}
 }
-//the Menu class has the description of each item to include in the Tab

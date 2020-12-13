@@ -28,4 +28,3 @@ public class Orders {
 			return false;
 		}
 }
-//The Orders objelct indicates what menu items were ordered

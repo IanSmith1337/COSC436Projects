@@ -13,4 +13,3 @@ public class OrderItem {
 
 
 }
-//An OrderItem object will store an order by its item number only (not its description)

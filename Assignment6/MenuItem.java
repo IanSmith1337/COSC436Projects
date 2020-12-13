@@ -31,5 +31,4 @@ public class MenuItem {
 
     }
 }
-//A MenuItem object will store the menu item #, the description, and its cost
 
